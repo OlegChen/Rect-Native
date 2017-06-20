@@ -9,45 +9,50 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+    Image,
 } from 'react-native';
+
+
 
 export default class TestProject extends Component {
   render() {
+      let pic = {
+          uri: 'http://i.imgur.com/UePbdph.jpg'
+      };
+
+      var movie = {
+
+          title: "标题", year:"2015",};
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+        <View style={styles.container}>
+
+            <Image
+                source={{uri: 'http://i.imgur.com/UePbdph.jpg'}}
+                style={styles.thumbnail}
+            />
+            <Text>{movie.year}</Text>
+            <Text>bbbbb</Text>
+
+        </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    thumbnail: {
+        width: 100,
+        height: 100,
+    },
 });
+
+
 
 AppRegistry.registerComponent('TestProject', () => TestProject);
